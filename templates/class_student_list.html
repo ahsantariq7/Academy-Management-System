@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Students in {{ class.name }}</h2>
+    <ul>
+      {% for student in students %}
+        <li>{{ student.name }} - {{student.class_enrolled.name}}</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'attendance_create' class.id %}">Mark Attendance</a>
+</body>
+</html>

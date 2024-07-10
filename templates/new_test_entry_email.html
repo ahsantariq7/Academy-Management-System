@@ -1,0 +1,17 @@
+<!-- new_test_entry_email.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Test Entry Notification</title>
+</head>
+<body>
+    <p>Hello,</p>
+    <p>A new test entry has been recorded for {{ test.student_test.name }} in {{ test.test_class.name }}.</p>
+    <p>Date: {{ test.date|date:"F d, Y" }}</p>
+    <p>Obtained Marks: {{ test.obtained_marks }}</p>
+    <p>Total Marks: {{ test.total_marks }}</p>
+    <p>Thank you.</p>
+</body>
+</html>

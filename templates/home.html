@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTA Dashboard</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0a4bee;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #0a4bee;
+        }
+
+        nav ul li {
+            margin: 5px;
+        }
+
+        nav ul li a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #1e90ff;
+            transform: scale(1.05);
+        }
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+            background-color: #3a3a3a;
+        }
+
+        .grid-item a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rao Tariq Academy Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'academy_list' %}">Academies</a></li>
+                <li><a href="{% url 'class_list' %}">Classes</a></li>
+                <li><a href="{% url 'student_list' %}">Students</a></li>
+                <li><a href="{% url 'charges_list' %}">Charges</a></li>
+                <li><a href="{% url 'attendance_list' %}">Attendance</a></li>
+                <li><a href="{% url 'fee_submission_list' %}">Fee Submissions</a></li>
+                <li><a href="{% url 'reward_list' %}">Rewards</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Welcome to the Rao Tariq Academy Dashboard</h2>
+            <p>Manage all aspects of the academy, from student enrollments to class schedules and fee submissions.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <div class="grid-container">
+                <!-- Academy -->
+                <div class="grid-item">
+                    <a href="{% url 'academy_create' %}">Create Academy</a>
+                </div>
+                <div class="grid-item">
+                    <a href="{% url 'academy_list' %}">List Academies</a>
+                </div>
+
+                <!-- Class -->
+                <div class="grid-item">
+                    <a href="{% url 'class_create' %}">Create Class</a>
+                </div>
+                <div class="grid-item">
+                    <a href="{% url 'class_list' %}">List Classes</a>
+                </div>
+
+                <!-- Student -->
+                <div class="grid-item">
+                    <a href="{% url 'student_create' %}">Create Student</a>
+                </div>
+                <div class="grid-item">
+                    <a href="{% url 'student_list' %}">List Students</a>
+                </div>
+
+                <!-- Charges -->
+                <div class="grid-item">
+                    <a href="{% url 'charges_create' %}">Create Charges</a>
+                </div>
+                <div class="grid-item">
+                    <a href="{% url 'charges_list' %}">List Charges</a>
+                </div>
+
+                <!-- Attendance -->
+                <div class="grid-item">
+                    <a href="{% url 'attendance_create' %}">Create Attendance</a>
+                </div>
+                <div class="grid-item">
+                    <a href="{% url 'attendance_list' %}">List Attendance</a>
+                </div>
+
+                <!-- Fee Submission -->
+                <div class="grid-item">
+                    <a href="{% url 'fee_submission_create' %}">Create Fee Submission</a>
+                </div>
+                <div class="grid-item">
+                    <a href="{% url 'fee_submission_list' %}">List Fee Submissions</a>
+                </div>
+
+                <!-- Reward -->
+                <div class="grid-item">
+                    <a href="{% url 'reward_create' %}">Create Reward</a>
+                </div>
+                <div class="grid-item">
+                    <a href="{% url 'reward_list' %}">List Rewards</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="grid-item">
+        <a href="{% url 'attendance_statistics' %}">Student_statistics</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Rao Tariq Academy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

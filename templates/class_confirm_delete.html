@@ -1,0 +1,19 @@
+<!-- class_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Class</title>
+</head>
+<body>
+    <h1>Delete Class</h1>
+    <p>Are you sure you want to delete "{{ class.name }}"?</p>
+    <form action="{% url 'class_delete' class.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+        <a href="{% url 'class_list' %}">Cancel</a>
+    </form>
+    
+</body>
+</html>

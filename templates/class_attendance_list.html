@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Attendance List</title>
+</head>
+<body>
+    <h2>Classes</h2>
+    <ul>
+      {% for class in classes %}
+        <li><a href="{% url 'class_attendance_detail' class.id %}">{{ class.name }}</a></li>
+      {% endfor %}
+    </ul>
+</body>
+</html>

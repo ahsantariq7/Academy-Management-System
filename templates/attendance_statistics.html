@@ -1,0 +1,36 @@
+<!-- attendance_statistics.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Attendance Statistics</title>
+</head>
+<body>
+    <h1>Students Attendance Statistics</h1>
+
+    {% for class_data in students_by_class %}
+        <h2>{{ class_data.class.name }}</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Total Attendances</th>
+                    <th>Total Leaves</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in class_data.students %}
+                    <tr>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.total_attendances }}</td>
+                        <td>{{ student.total_leaves }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+
+</body>
+</html>

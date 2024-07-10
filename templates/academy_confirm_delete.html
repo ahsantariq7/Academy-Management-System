@@ -1,0 +1,18 @@
+<!-- academy_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Academy</title>
+</head>
+<body>
+    <h1>Delete Academy</h1>
+    <p>Are you sure you want to delete "{{ academy.name }}"?</p>
+    <form action="{% url 'academy_delete' academy.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+        <a href="{% url 'academy_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

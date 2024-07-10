@@ -1,0 +1,18 @@
+<!-- reward_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Reward</title>
+</head>
+<body>
+    <h1>Delete Reward</h1>
+    <p>Are you sure you want to delete "{{ reward.name }}"?</p>
+    <form action="{% url 'reward_delete' reward.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+        <a href="{% url 'reward_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

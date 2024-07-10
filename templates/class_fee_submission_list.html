@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fee Submissions</h1>
+<table>
+    <tr>
+        <th>Student</th>
+        <th>Class</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Payment Method</th>
+        <th>Remarks</th>
+    </tr>
+    {% for submission in fee_submissions %}
+    <tr>
+        <td>{{ submission.student.name }}</td>
+        <td>{{ submission.fee_class.name }}</td>
+        <td>{{ submission.amount }}</td>
+        <td>{{ submission.date }}</td>
+        <td>{{ submission.payment_method }}</td>
+        <td>{{ submission.remarks }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
